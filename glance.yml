@@ -1,0 +1,84 @@
+pages:
+  - name: dionysus
+    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+    # hide-desktop-navigation: true
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: rss
+            limit: 10
+            collapse-after: 3
+            cache: 12h
+            feeds:
+              - url: https://feeds.a.dj.com/rss/RSSWorldNews.xml
+                title: WSJ World News
+                limit: 7
+
+
+      - size: full
+        widgets:
+          - type: markets
+            markets:
+              - symbol: TSLA
+                name: Tesla
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: MSFT
+                name: Microsoft
+
+          - type: search
+            search-engine: perplexity
+            bangs:
+              - title: YouTube
+                shortcut: "yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+            new-tab: true
+
+          - type: videos
+            channels:
+              - UCYCO3Kifwg56zhus3XXiAVg # james vinh scholz
+              - UCbDmEdLs-SB3FjrDFQJ4TDg # Reysu
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+              - UC28n0tlcNSa1iPe5mettocg # voidzilla
+              - UCzMloFOYU9p0U6f-H4Q09RQ # Timothy Hu
+              - UCiWMV3RA6jpYNGZWTbjFneA # Fly With Johnny Thai
+              - UCcaTUtGzOiS4cqrgtcsHYWg # jvscholz
+              - UCFQMnBA3CS502aghlcr0_aw # Coffeezilla
+              - UCRijo3ddMTht_IHyNSNXpNQ # Dude Perfect
+              - UCIGl_6GmKR7fPRBBDDRcR0Q # Rainimator
+              - UCIabPXjvT5BVTxRDPCBBOOQ # Dani
+              - UCJb9AgsGZvAIGxP6AGUORAw # Wade Concept
+              - UCdC7f0vRpptUGe0TAx7LPQA # RiceFarmer12
+              - UC-lHJZR3Gqxm24_Vd_AJ5Yw # PewDiePie
+              - UCQTmoQ_S26PlmDoXujZpbYQ # Tim Kim
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: worldnews
+                show-thumbnails: true
+                limit: 8
+              - type: reddit
+                subreddit: technology
+                show-thumbnails: true
+                limit: 8
+
+      - size: small
+        widgets:
+          - type: weather
+            location: Sacramento, United States
+            units: imperial # alternatively "metric"
+            hour-format: 12h # alternatively "24h"
+            # Optionally hide the location from being displayed in the widget
+            # hide-location: true
+
+          - type: clock
+            location: Sacramento, United States
+            hour-format: 12h # alternatively "24h"
+            # Optionally hide the location from being displayed in the widget
+            # hide-location: true
